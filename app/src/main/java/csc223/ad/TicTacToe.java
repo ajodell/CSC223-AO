@@ -2,7 +2,7 @@ package csc223.ad;
 
 import java.util.Scanner;
 
-public class TicTacToe {
+public class TicTacToe implements Game{
 
     String[][] grid;
     String currentPlayer;
@@ -109,12 +109,31 @@ public class TicTacToe {
                 return true;
             }
         }
+        // Check if all spots are full
+        boolean full = true;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (this.grid[i][j] == "_") {
+                    full = false;
+                }
+            }
+        }
+        if (full = true) {
+            this.winner = null;
+            return true;
+        }
+
         // Returns if nobody won
         return false;
     }
 
     public void endGame() {
-        System.out.println("Player " + this.winner + " wins!");
+        if (this.winner == null) {
+            System.out.println("Nobody won :(");
+        }
+        else {
+            System.out.println("Player " + this.winner + " wins!");
+        }
         startGame();
     }
 
