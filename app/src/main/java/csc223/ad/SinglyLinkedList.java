@@ -1,6 +1,6 @@
 package csc223.ad;
 
-public class SinglyLinkedList implements LinkedList{
+public class SinglyLinkedList implements LinkedList {
 
     protected Node head;
     protected int size;

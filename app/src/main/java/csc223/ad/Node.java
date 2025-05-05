@@ -1,6 +1,7 @@
 package csc223.ad;
 
 public class Node {
+    
     protected Node next;
     protected Node previous;
     protected char data;
